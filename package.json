@@ -1,0 +1,21 @@
+{
+  "name": "LM",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "GPL-2.0",
+  "dependencies": {
+    "pixi.js": "^4.5.1"
+  },
+  "devDependencies": {
+    "source-map-loader": "^0.2.1",
+    "ts-loader": "^2.0.3",
+    "typescript": "^2.3.2",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --progress",
+    "watch": "webpack --watch"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es6",
+    "outDir": "dist",
+    "module": "es6",
+    "moduleResolution": "node"
+  },
+  "files": [
+    "./src/index.ts"
+  ]
+}
