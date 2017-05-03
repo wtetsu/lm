@@ -1,4 +1,5 @@
 import * as PIXI from "pixi.js";
+import { Application } from "./application";
 
 export class Actor {
     public x: number
@@ -14,7 +15,7 @@ export class Actor {
     public container
     protected sprite
 
-    constructor (image : string) {
+    private constructor (image : string) {
         this.x = 0;
         this.y = 0;
         this.vx = 0;
@@ -25,12 +26,15 @@ export class Actor {
         this.life = -1;
         this.alive = true;
 
-        this.sprite = PIXI.Sprite.fromImage(image)
+        this.sprite = PIXI.Sprite.fromImage(image); // TODO
         this.sprite.anchor.set(0.5);
     }
 
     public static create(image : string) {
-        return new Actor(image);
+        let newActor = new Actor(image);
+        Application.getInstance().actors.push(newActor);
+        newActor.setContainer(Application.getInstance().app.stage); // TODO
+        return newActor;
     }
 
     public setContainer(container) {
