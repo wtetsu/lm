@@ -1,10 +1,11 @@
 import * as PIXI from "pixi.js";
 import { Actor } from "./actor";
 import { Scene } from "./scene";
+import { ActorManager } from "./actor_manager";
 
 export class Application {
-    public app // TODO
-    public actors : Actor[] // TODO
+    public pixi // TODO
+    protected actorManager : ActorManager
     protected currentScene : Scene
     
     private static instance : Application
@@ -17,32 +18,25 @@ export class Application {
     }
     
     private constructor() {
-        this.app = new PIXI.Application(800, 600, {backgroundColor : 0x1099bb});
-        document.body.appendChild(this.app.view);
+        this.pixi = new PIXI.Application(800, 600, {backgroundColor : 0x1099bb});
+        this.actorManager = new ActorManager();
+        document.body.appendChild(this.pixi.view);
     }
 
     public start(scene : Scene) {
         this.currentScene = scene;
-        this.actors = [];
-        this.app.ticker.add((delta) => {
+        //this.actors = [];
+        this.pixi.ticker.add((delta) => {
             this.currentScene.update(delta);
             this.updateAll();
-        });        
+        });
     }
 
     protected updateAll() {
-        let removeList = [];
-        for (let i = 0; i < this.actors.length; i++) {
-            let a = this.actors[i];
-            a.update();
-            if (!a.alive) {
-                removeList.push(i)
-            }
-        }
+        this.actorManager.updateAll();
+    }
 
-        for (let i = removeList.length-1; i >= 0 ; i--) {
-            let index = removeList[i];
-            this.actors.splice(index, 1);
-        }
+    public createActor(image : string) : Actor {
+        return this.actorManager.getActor(image);
     }
 }

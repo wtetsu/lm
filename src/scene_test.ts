@@ -4,7 +4,8 @@ import { Actor } from "./actor"
 
 export class SceneTest extends Scene {
     public update(delta : number) {
-        let newActor = Actor.create("image.png");
+        //let newActor = Actor.create("image.png");
+        let newActor = this.app.createActor("image.png");
         
         newActor.x = 400;
         newActor.y = 300;

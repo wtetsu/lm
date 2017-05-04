@@ -15,7 +15,11 @@ export class Actor {
     public container
     protected sprite
 
-    private constructor (image : string) {
+    public constructor () {
+        this.initialize(null);
+    }
+
+    protected initialize(image : string) {
         this.x = 0;
         this.y = 0;
         this.vx = 0;
@@ -26,16 +30,22 @@ export class Actor {
         this.life = -1;
         this.alive = true;
 
+        if (image) {
+            this.setImage(image);
+        }
+    }
+
+    public setImage(image : string) {
         this.sprite = PIXI.Sprite.fromImage(image); // TODO
         this.sprite.anchor.set(0.5);
     }
 
-    public static create(image : string) {
-        let newActor = new Actor(image);
-        Application.getInstance().actors.push(newActor);
-        newActor.setContainer(Application.getInstance().app.stage); // TODO
-        return newActor;
-    }
+    // public static create(image : string) {
+    //     let newActor = new Actor(image);
+    //     //Application.getInstance().actors.push(newActor);
+    //     newActor.setContainer(Application.getInstance().app.stage); // TODO
+    //     return newActor;
+    // }
 
     public setContainer(container) {
         this.container = container;
@@ -52,7 +62,8 @@ export class Actor {
         this.sprite.scale.x = this.scale;
         this.sprite.scale.y = this.scale;
 
-        if (this.x < -0 || this.x > 800 || this.y < 0 || this.y > 600) {
+        const s = 100;
+        if (this.x < 0-s || this.x > 800+s || this.y < 0-s || this.y > 600+s) {
             this.alive = false;
             this.dispose();
         }
@@ -62,4 +73,3 @@ export class Actor {
         this.container.removeChild(this.sprite);
     }
 }
-
