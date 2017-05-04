@@ -1,9 +1,8 @@
-import { Application } from "./application";
-import { Scene } from "./scene";
-import { SceneTest } from "./scene_test";
+import * as sgf from "./sgf"
+import { SceneTest } from "./scene_test"
 
-let application = Application.getInstance();
+let application = sgf.Application.getInstance();
 
-let scene : Scene = new SceneTest(application)
+let scene : sgf.Scene = new SceneTest(application)
 application.start(scene);
 

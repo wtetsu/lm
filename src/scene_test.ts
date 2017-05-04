@@ -1,10 +1,8 @@
 
-import { Scene } from "./scene"
-import { Actor } from "./actor"
+import * as sgf from "./sgf"
 
-export class SceneTest extends Scene {
+export class SceneTest extends sgf.Scene {
     public update(delta : number) {
-        //let newActor = Actor.create("image.png");
         let newActor = this.app.createActor("image.png");
         
         newActor.x = 400;
@@ -15,3 +13,4 @@ export class SceneTest extends Scene {
         newActor.scale = 0.1 + 1.0 * (Math.random());
     }
 }
+

@@ -3,7 +3,7 @@
     "sourceMap": true,
     "target": "es3",
     "outDir": "dist",
-    "module": "es6",
+    "module": "commonjs",
     "moduleResolution": "node"
   },
   "files": [
