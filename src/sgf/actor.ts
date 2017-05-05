@@ -12,7 +12,7 @@ export class Actor {
     public life: number
     public alive: boolean
 
-    public container
+    public container // TODO
     protected sprite
 
     public constructor () {
@@ -36,17 +36,12 @@ export class Actor {
     }
 
     public setImage(image : string) {
-        this.sprite = PIXI.Sprite.fromImage(image); // TODO
+        this.sprite = new PIXI.Sprite(PIXI.loader.resources[image].texture);
+        //this.sprite = PIXI.Sprite.fromImage(image); // TODO
         this.sprite.anchor.set(0.5);
     }
 
-    // public static create(image : string) {
-    //     let newActor = new Actor(image);
-    //     //Application.getInstance().actors.push(newActor);
-    //     newActor.setContainer(Application.getInstance().app.stage); // TODO
-    //     return newActor;
-    // }
-
+    // TODO
     public setContainer(container) {
         this.container = container;
         this.container.addChild(this.sprite);

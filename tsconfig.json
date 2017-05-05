@@ -4,7 +4,13 @@
     "target": "es3",
     "outDir": "dist",
     "module": "commonjs",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "lib": [
+      "dom",
+      "es2015",
+      "es5",
+      "es6"
+    ]    
   },
   "files": [
     "./src/index.ts"
