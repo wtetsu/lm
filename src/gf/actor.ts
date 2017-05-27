@@ -37,6 +37,9 @@ export class Actor {
 
     public setImage(image : string) {
         this.sprite = new PIXI.Sprite(PIXI.loader.resources[image].texture);
+        //this.sprite = new PIXI.Sprite(PIXI.loader.resources["image/image01.png"].texture);
+        //this.sprite = PIXI.Sprite.fromImage("image/image01.png");
+        
         //this.sprite = PIXI.Sprite.fromImage(image); // TODO
         this.sprite.anchor.set(0.5);
     }

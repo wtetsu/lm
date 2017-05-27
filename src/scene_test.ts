@@ -1,7 +1,7 @@
 
-import * as sgf from "./sgf"
+import * as gf from "./gf"
 
-export class SceneTest extends sgf.Scene {
+export class SceneTest extends gf.Scene {
     public update(delta : number) {
         let image = this.createImageFileName();
         let newActor = this.app.createActor(image);
