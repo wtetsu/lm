@@ -4,14 +4,16 @@
   "main": "index.js",
   "license": "GPL-2.0",
   "dependencies": {
-    "pixi.js": "^4.5.1"
+    "pixi.js": "^4.8.1"
   },
   "devDependencies": {
-    "source-map-loader": "^0.2.1",
-    "ts-loader": "^2.0.3",
-    "typescript": "^2.3.2",
-    "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.5"
+    "prettier": "1.14.2",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^4.5.0",
+    "typescript": "^3.0.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   },
   "scripts": {
     "start": "webpack-dev-server",

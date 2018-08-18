@@ -1,21 +1,23 @@
 const webpack = require("webpack");
 
 module.exports = {
+  mode: process.env.NODE_ENV || "development",
   entry: "./src/index.ts",
   output: {
     path: __dirname,
     filename: "./dist/app.js"
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: [".ts", ".js"]
   },
-  plugins: [
-  ],  
-  devServer: {
-  },
+  plugins: [],
+  devServer: {},
   module: {
-    loaders: [
-      { test: /\.tsx?$/, loader: 'ts-loader' }
+    rules: [
+      {
+        loader: "ts-loader",
+        test: /\.tsx?$/
+      }
     ]
   },
   devtool: "source-map"
