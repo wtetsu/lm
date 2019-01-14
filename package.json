@@ -4,20 +4,21 @@
   "main": "index.js",
   "license": "GPL-2.0",
   "dependencies": {
-    "pixi.js": "^4.8.1"
+    "pixi.js": "^4.8.5"
   },
   "devDependencies": {
-    "prettier": "1.14.2",
+    "prettier": "1.15.3",
     "source-map-loader": "^0.2.4",
-    "ts-loader": "^4.5.0",
-    "typescript": "^3.0.1",
-    "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.2.2",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --progress",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "release": "NODE_ENV=production npm run build"
   }
 }
