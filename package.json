@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "GPL-3.0",
   "dependencies": {
+    "copy-webpack-plugin": "^4.6.0",
     "pixi.js": "^4.8.6"
   },
   "devDependencies": {
