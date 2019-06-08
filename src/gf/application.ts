@@ -18,7 +18,7 @@ export class Application {
   }
 
   private constructor() {
-    this.pixi = new PIXI.Application(800, 600, { backgroundColor: 0x1099bb });
+    this.pixi = new PIXI.Application({ width: 800, height: 600, backgroundColor: 0x1099bb });
 
     this.pixi.stage.interactive = true;
     this.pixi.stage.mousemove = mouseData => {
@@ -89,7 +89,7 @@ export class Application {
       "image/image50.png"
     ];
 
-    PIXI.loader
+    PIXI.Loader.shared
       .add(images)
       .on("progress", (loader, resource) => {
         console.log("loading: " + resource.url);

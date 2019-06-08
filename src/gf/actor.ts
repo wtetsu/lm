@@ -36,7 +36,7 @@ export class Actor {
   }
 
   public setImage(image: string) {
-    this.sprite = new PIXI.Sprite(PIXI.loader.resources[image].texture);
+    this.sprite = new PIXI.Sprite(PIXI.Loader.shared.resources[image].texture);
     //this.sprite = new PIXI.Sprite(PIXI.loader.resources["image/image01.png"].texture);
     //this.sprite = PIXI.Sprite.fromImage("image/image01.png");
 
@@ -61,12 +61,7 @@ export class Actor {
     this.sprite.scale.y = this.scale;
 
     const s = 100;
-    if (
-      this.x < 0 - s ||
-      this.x > 800 + s ||
-      this.y < 0 - s ||
-      this.y > 600 + s
-    ) {
+    if (this.x < 0 - s || this.x > 800 + s || this.y < 0 - s || this.y > 600 + s) {
       this.alive = false;
       this.dispose();
     }
